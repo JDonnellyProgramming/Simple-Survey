@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Calculator</title>
+        <style>
+            body {
+                background-color: #05c46b;
+                font-family: Verdana;
+                text-align: center;
+            }
+            form {
+                background-color: #fff;
+                max-width: 500px;
+                margin: 50px auto;
+                padding: 30px 20px;
+                box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+            }
+            .form-control {
+                text-align: left;
+                margin-bottom: 25px;
+            }
+            .form-control label {
+                  display: block;
+                  margin-bottom: 10px;
+            }
+            .form-control input,
+            .form-control select,
+            .form-control textarea {
+                border: 1px solid #777;
+                border-radius: 2px;
+                font-family: inherit;
+                padding: 10px;
+                display: block;
+                width: 25%;
+            }
+            .form-control input[type="radio"],
+            .form-control input[type="checkbox"] {
+                display: inline-block;
+                width: auto;
+            }
+            button {
+                background-color: #05c46b;
+                border: 1px solid #777;
+                border-radius: 2px;
+                font-family: inherit;
+                font-size: 21px;
+                display: block;
+                width: 100%;
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+            button:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+            button:active {
+                opacity: 0.6;
+                background-color: #777;
+                color: #05c46b;
+            }
+            #navbar {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                height: 50px;
+                background-color: #333;
+                color: #fff;
+                padding: 0px 20px;
+                align-items: top;
+                position: fixed;
+                top: 5px;
+                width: 97%;
+            }
+            #navbar a {
+                color: #fff;
+                margin-left: 20px;
+                text-decoration: none;
+                font-size: 20px;
+                padding: 20px;
+
+            }
+            #navbar a:hover {
+                border: 2px solid gold;
+                border-radius: 20px;
+                padding: 10px;
+
+            }
+            #navbar a:active {
+                color: red;
+                transform: scale(0.95);
+            }
+            h1 {
+                margin-top: 90px;
+                color: red;
+                font-size: 50px;
+                animation: example 4s infinite,
+                size 2s infinite;
+                animation-timing-function: linear;
+            }
+            @keyframes example {
+                0% {color: red;}
+                25% {color: yellow;}
+                50% {color: blue;}
+                75% {color: green;}
+                100% {color: red;}
+            }
+            @keyframes size {
+                0% {transform: scale(1);}
+                50% {transform: scale(1.1);}
+                100% {transform: scale(1);}
+            }
+            .obj1 {
+                width: 100px;
+                height: 100px;
+                position: fixed;
+                background-color: red;
+                animation: example2 4s infinite;
+                margin-top: 100px;
+            }
+            @keyframes example2 {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+            .obj1-label {
+                position: absolute;
+                top: 40%;
+                transform: tranlateY(-50%);
+                transform: translateX(-50%);
+                font-size: 18px;
+                font-weight: bold;
+                color: gold;
+            }
+            .obj2 {
+                width: 50px;
+                height: 50px;
+                position: relative;
+                background-color: gold;
+                animation-name: example3;
+                animation-duration: 4s;
+                animation-delay: 2s;
+                margin-left: 1600px;
+                border-radius: 40px;
+                border: 2px solid silver;
+            }
+            @keyframes example3 {
+                0% {transform: scale(1);}
+                50% {transform: scale(1.4);}
+                100% {transform: scale(1);}
+            }
+            .obj2:hover {
+                animation-name: example4;
+                animation-duration: 2s;
+
+            }
+            @keyframes example4 {
+                0% {opacity: 1; left: 0px; top: 0px;}
+                50% {opacity: 0.5; left: 0px; top: 200px;}
+                100% {opacity: 1; left: 0px; top: 0px;}
+
+            }
+        </style>
+        <body>
+            <div id="navbar" class="fixed-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="obj1">
+                <label class="obj1-label">
+                    Welcome
+                </label>
+            </div>
+        <h1>Survey Form</h1>
+        <div class="obj2">
+              
+        </div>
+        <form id="form">
+            <div class="form-control">
+                <label for="name" id="label-name">
+                    Name
+                </label>
+                <input type="text"
+                id="name"
+                placeholder="Enter your name" />
+            </div>
+            <div class="form-control">
+                <label for="email" id="label-email">
+                    Email
+                </label>
+                <input type="email"
+                id="email"
+                placeholder="Enter your email">
+            </div>
+            <div class="form-control">
+                <label for="age" id="label-age">
+                    Age
+                </label>
+                <input type="text"
+                id="age"
+                placeholder="Enter your age" />
+
+            </div>
+            <div class="form-control">
+                <label for="role"
+                id="label-role">
+                Which option best describes you?
+            </label>
+
+            <select name="role" id="role">
+                <option value="student">Student</option>
+                <option value="intern">Intern</option>
+                <option value="professional">Professional</option>
+                <option value="other">Other</option>
+            </select>
+            </div>
+            <div class="form-control">
+                <label>
+                    Would you recommend me to a friend?
+                </label>
+                <label for="recommend-1">
+                    <input type="radio"
+                         id="recommend-1"
+                         name="recommend">Yes
+                </label>
+                <label for="recommend-2">
+                    <input type="radio"
+                    id="recommend-2"
+                    name="recommend-2">No
+                </label>
+                <label for="recommend-3">
+                    <input type="radio"
+                    id="recommend-3"
+                    name="recommend-3">Maybe
+                </label>
+            </div>
+            <div class="form-control">
+                <label>Languages and Frameworks known</label>
+                <label for="inp-1">
+                    <input type="checkbox"
+                           name="inp">C</input></label>
+                <label for="inp-2">
+                    <input type="checkbox"
+                           name="inp">C++</input></label>
+                <label for="inp-3">
+                    <input type="checkbox"
+                           name="inp">C#</input></label>
+                <label for="inp-4">
+                    <input type="checkbox"
+                           name="inp">Java</input></label>
+                <label for="inp-5">
+                    <input type="checkbox"
+                           name="inp">Python</input></label>
+                <label for="inp-6">
+                    <input type="checkbox"
+                           name="inp">JavaScript</input></label>
+                <label for="inp-7">
+                    <input type="checkbox"
+                           name="inp">React</input></label>
+                <label for="inp-7">
+                    <input type="checkbox"
+                           name="inp">Angular</input></label>
+                <label for="inp-7">
+                    <input type="checkbox"
+                           name="inp">Django</input></label>
+                <label for="inp-7">
+                    <input type="checkbox"
+                           name="inp">Spring</input></label>
+            </div>
+            <div class="form-control">
+                <label for="comment">
+                    Any comments or suggestions
+                </label>
+                <textarea name="comment" 
+                id="comment"
+                placeholder="Enter your comment here"></textarea>
+            </div>
+            <button type="submit" value="submit">
+                Submit
+            </button>
+        </form>
+        </body>
+    </head>
+</html>
